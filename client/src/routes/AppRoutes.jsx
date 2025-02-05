@@ -22,13 +22,7 @@ const AppRoutes = () => {
       {/* Private */}
       <Route 
         path="admin"
-        element = {
-          <>
-            <h1>Navbar</h1>
-            <Outlet />
-          </>
-        }
-        >
+        element = {<Layout />} >
         <Route index element={<Dashboard />} />
         <Route path="manage" element={<Manage />} />
       </Route>

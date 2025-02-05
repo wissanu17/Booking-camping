@@ -1,6 +1,11 @@
+import { Outlet } from "react-router"
+
 const LayoutAdmin = () => {
   return (
-    <div>LayoutAdmin</div>
+    <div>
+      <h1>Navbar</h1>
+      <Outlet />
+    </div>
   )
 }
 export default LayoutAdmin
