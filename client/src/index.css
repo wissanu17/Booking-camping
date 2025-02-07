@@ -1,14 +1,12 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* @tailwind directives removed as they are not recognized */
-
-/* ... */
-
-
-/* ... */
-
+@layer components {
+  .container {
+    @apply px-8 mx-auto;
+  }
+}
 
 @layer base {
   :root {
