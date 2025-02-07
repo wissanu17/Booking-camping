@@ -1,11 +1,13 @@
-import { Outlet } from "react-router"
+import Navbar from "@/components/navbar/Navbar";
+import { Outlet } from "react-router";
 
+// rafce
 const LayoutAdmin = () => {
   return (
-    <div>
-      <h1>Navbar</h1>
+    <main className="container">
+      <Navbar />
       <Outlet />
-    </div>
-  )
-}
-export default LayoutAdmin
+    </main>
+  );
+};
+export default LayoutAdmin;

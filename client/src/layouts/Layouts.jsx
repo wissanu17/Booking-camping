@@ -1,12 +1,14 @@
+import Navbar from "@/components/navbar/Navbar"
 import { Outlet } from "react-router"
 
-const Layouts = () => {
+// rafce
+const Layout = () => {
   return (
-    <div>
-      <h1>Main Nav</h1>
-      <hr />
-      <Outlet />
-    </div>
+    <main className="container">
+        <Navbar />
+        <hr />
+        <Outlet />
+    </main>
   )
 }
-export default Layouts
+export default Layout

@@ -1,4 +1,6 @@
 //rafce
+import LayoutAdmin from "@/layouts/LayoutAdmin";
+import Layouts from "@/layouts/Layouts";
 import About from "@/pages/About";
 import Dashboard from "@/pages/admin/Dashboard";
 import Manage from "@/pages/admin/Manage";
@@ -11,27 +13,27 @@ import { BrowserRouter, Routes, Route, Outlet } from "react-router";
 const AppRoutes = () => {
   return (
     <BrowserRouter>
-    <Routes>
-      {/* Public */}
-      <Route element={<Layout />} >
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />        
-      </Route>
+      <Routes>
+        {/* Public */}
+        <Route element={<Layouts />} >
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />} />        
+        </Route>
 
 
-      {/* Private */}
-      <Route 
-        path="admin"
-        element = {<Layout />} >
-        <Route index element={<Dashboard />} />
-        <Route path="manage" element={<Manage />} />
-      </Route>
+        {/* Private */}
+        <Route 
+          path="admin"
+          element = {<LayoutAdmin />} >
+          <Route index element={<Dashboard />} />
+          <Route path="manage" element={<Manage />} />
+        </Route>
 
-      {/* Not Found */}
-      <Route path="*" element={<Notfound />} />
+        {/* Not Found */}
+        <Route path="*" element={<Notfound />} />
 
-    </Routes>
-  </BrowserRouter>
+      </Routes>
+    </BrowserRouter>
   )
 }
 export default AppRoutes
