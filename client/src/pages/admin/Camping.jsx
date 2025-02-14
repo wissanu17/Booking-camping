@@ -8,12 +8,14 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { campingSchema } from "@/utils/schemas";
 import Buttons from "@/components/form/Buttons";
+import CategoryInput from "@/components/form/CategoryInput";
+import Mainmap from "@/components/map/Mainmap";
 
 
 
 const Camping = () => {
 
-  const { register, handleSubmit, formState } = useForm({
+  const { register, handleSubmit, formState, setValue } = useForm({
     resolver: zodResolver(campingSchema),
   });
 
@@ -21,10 +23,10 @@ const Camping = () => {
 
   console.log(isSubmitting);
 
-  const onSubmit = async(data) => {
+  const onSubmit = async (data) => {
 
     // test
-    await new Promise((resolve)=> setTimeout(resolve,3000))
+    await new Promise((resolve) => setTimeout(resolve, 3000))
 
     console.log(data)
   }
@@ -57,11 +59,23 @@ const Camping = () => {
               placeholder="Input Your Description"
               errors={errors}
             />
+
+            <CategoryInput
+              name="category"
+              register={register}
+              setValue={setValue}
+            />
+
           </div>
-          <Buttons 
-          text="create camping" 
-          isPending={isSubmitting}
-          type="submit" />
+
+          <Mainmap 
+            register={register} setValue={setValue}
+          />
+
+          <Buttons
+            text="create camping"
+            isPending={isSubmitting} 
+          />
         </form>
       </div>
     </section>
