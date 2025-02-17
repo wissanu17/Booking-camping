@@ -1,27 +1,29 @@
 const express = require("express");
 const cors = require("cors");
+const morgan = require("morgan");
 const app = express();
 
+const { readdirSync } = require('fs');
+const handleErrors = require("./middlewares/error");
+require('dotenv').config()
+const { clerkMiddleware } = require('@clerk/express');
+// const { createCamping } = require("./controllers/camping");
+// const campRoutes = require('./routes/camping')
+// const profileRoute = require('./routes/profile')
 
-const campingRoutes = require("./routes/camping");
-const morgan = require("morgan");
 // Middleware
 app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'))
 // Method GET, POST, PUT, DELETE, PATCH
 
+// app.use('/api', campRoutes)
+// app.use('/api', profileRoute)
 
-app.use('/api', campingRoutes);
-// app.get("/", (req, res) => {
-//   // code body
-//   res.json({ message: "Hello World" });
-//   // res.send("Hello World");
-// });
+console.log(readdirSync('./routes'))
+readdirSync('./routes').map((r) => app.use('/api', require(`./routes/${r}`)))
 
-
-
-
+app.use(handleErrors)
 
 // Start Server
 const PORT = 5000;

@@ -1,5 +1,4 @@
 
-
 // GET
 exports.listCamping = (req, res) => {
   try {
@@ -28,10 +27,10 @@ exports.readCamping = (req, res) => {
 exports.createCamping = (req, res) => {
   try {
     // code
-    const { title, price } = req.body
-    console.log(title)
-    console.log(price)
-    res.send("Hello POST Potae")
+    // const { title, price } = req.body
+    // console.log(title)
+    // console.log(price)
+    res.send("Hello Create Potae")
   } catch (error) {
     console.log(error.massage)
     res.status(500).json({ message: "Server Error" })
@@ -42,8 +41,8 @@ exports.createCamping = (req, res) => {
 exports.updateCamping = (req, res) => {
   try {
     // code
-    console.log(req.params.id)
-    res.send("Hello PUT Potae")
+    // console.log(req.params.id)
+    res.send("Hello PUT Update Potae")
   } catch (error) {
     console.log(error.massage)
     res.status(500).json({ message: "Server Error" })

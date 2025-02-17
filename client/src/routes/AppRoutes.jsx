@@ -1,41 +1,40 @@
-//rafce
+// rafce
+import Layout from "@/layouts/Layouts";
 import LayoutAdmin from "@/layouts/LayoutAdmin";
-import Layouts from "@/layouts/Layouts";
 import About from "@/pages/About";
 import Camping from "@/pages/admin/Camping";
 import Dashboard from "@/pages/admin/Dashboard";
 import Manage from "@/pages/admin/Manage";
 import Home from "@/pages/Home";
 import Notfound from "@/pages/Notfound";
-import { Layout } from "lucide-react";
+import Profile from "@/pages/user/Profile";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router";
-
 
 const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
         {/* Public */}
-        <Route element={<Layouts />} >
+        <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
-          <Route path="about" element={<About />} />        
+          <Route path="about" element={<About />} />
         </Route>
 
+        {/* Private User */}
+        <Route path="user" element={<Layout />}>
+          <Route path="profile" element={<Profile />} />
+        </Route>
 
-        {/* Private */}
-        <Route 
-          path="admin"
-          element = {<LayoutAdmin />} >
+        {/* Private Admin*/}
+        <Route path="admin" element={<LayoutAdmin />}>
           <Route index element={<Dashboard />} />
           <Route path="manage" element={<Manage />} />
           <Route path="camping" element={<Camping />} />
         </Route>
 
-        {/* Not Found */}
         <Route path="*" element={<Notfound />} />
-
       </Routes>
     </BrowserRouter>
-  )
-}
-export default AppRoutes
+  );
+};
+export default AppRoutes;
