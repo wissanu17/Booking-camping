@@ -14,7 +14,9 @@ const { clerkMiddleware } = require('@clerk/express');
 // Middleware
 app.use(cors());
 app.use(express.json());
+// กูจะบ้าแก้ตั้งนานลืมกดเรียกใช้แค่นี้ สาสสสสสส
 app.use(morgan('dev'))
+app.use(clerkMiddleware())
 // Method GET, POST, PUT, DELETE, PATCH
 
 // app.use('/api', campRoutes)

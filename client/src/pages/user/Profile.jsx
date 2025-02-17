@@ -14,6 +14,7 @@ const Profile = () => {
   // javascript
   // clerk
   const { getToken, userId } = useAuth();
+  // console.log(userId)
 
   const { register, handleSubmit, formState, setValue } = useForm({
     resolver: zodResolver(profileSchema),

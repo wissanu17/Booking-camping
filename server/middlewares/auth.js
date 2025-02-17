@@ -4,8 +4,10 @@ const { clerkClient } = require('@clerk/express')
 exports.authCheck = async (req, res, next) => {
   // code
   try {
-    const userId = req.auth.userId;
-
+    console.log('hello i sus')
+    const userId = req.auth.userId
+    //console.log(userId)
+    //console.log(ascaSaSc)
     if (!userId) {
       return renderError(401, "Unauthorized")
     }

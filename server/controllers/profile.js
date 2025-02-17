@@ -20,14 +20,17 @@ const renderERror = require("../utils/renderError");
 
 exports.createProfile = (req, res, next) => {
   try {
-    // code body
-    const { firstname, lastname, clerkid } = req.body;
+    // code body คำถาม คือ req มาจากไหน
+    const { firstname, lastname } = req.body;
 
-    console.log(req.header)
-    console.log(firstname, lastname, clerkid)
+    // console.log(req.headers.authorization)
+    // console.log(firstname, lastname, clerkid)
+
+    console.log(req.user)
+    //console.log(req.body)
     
-    console.log("Hello createProfile");
-    res.json({ message: "Hello createProfile" });  
+    console.log("Hello createProfile at controller");
+    res.json({ message: "Hello createProfile at controller" });  
   } catch (error) {
     console.log(error.message);
     next(error);
