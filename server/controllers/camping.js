@@ -1,11 +1,11 @@
+const prisma = require("../config/prisma")
 
 // GET
-exports.listCamping = (req, res) => {
+exports.listCamping = async(req, res) => {
   try {
     // body
-    console.log("Hello Controller Potae")
-    //console.log(roitai)
-    res.send("Hello Controller Potae")
+    const campings = await prisma.landmark.findMany()
+    res.json(result: campings)
   } catch (error) {
     console.log(error.massage)
     res.status(500).json({ message: "Server Error" })
@@ -13,10 +13,16 @@ exports.listCamping = (req, res) => {
 }
 
 // GET
-exports.readCamping = (req, res) => {
+exports.readCamping = async(req, res) => {
   try {
     // code
-    res.send("Hello Read Potae")
+    const { id } = req.params;
+    const campings = await prisma.landmark.finFirst({
+      where: {
+        id: Number(id)
+      }
+    })
+    res.json(result: campings)
   } catch (error) {
     console.log(error.massage)
     res.status(500).json({ message: "Server Error" })
@@ -24,13 +30,34 @@ exports.readCamping = (req, res) => {
 }
 
 // POST
-exports.createCamping = (req, res) => {
+exports.createCamping = async (req, res) => {
   try {
     // code
     // const { title, price } = req.body
     // console.log(title)
     // console.log(price)
-    res.send("Hello Create Potae")
+    // console.log(req.body)
+    //console.log(req.user.id)
+
+    const { title, description, price, category, lat, lng } = req.body
+    const { id } = req.user
+    const camping = await prisma.landmark.create(
+      {
+        data:{
+          title: title,
+          description: description,
+          price: price,
+          category: category,
+          lat: lat,
+          lng: lng,
+          profileId: id,
+        },
+      }
+    )
+    res.json({ 
+      message: "Create camping success Broo!!!", 
+      result: camping})
+    // res.send("Hello Create Potae 66666666666666")
   } catch (error) {
     console.log(error.massage)
     res.status(500).json({ message: "Server Error" })

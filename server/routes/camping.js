@@ -13,7 +13,7 @@ const { authCheck } = require("../middlewares/auth")
 // @ENDPOINT: http://localhost:5000/api/camping
 // @METHOD: GET
 // @ACCESS Private
-router.get("/camping", authCheck, listCamping)
+router.get("/camping", listCamping)
 
 // @ENDPOINT: http://localhost:5000/api/camping/5
 // @METHOD: GET
@@ -23,7 +23,7 @@ router.get("/camping/:id", readCamping)
 // @ENDPOINT: http://localhost:5000/api/camping
 // @METHOD: POST
 // @ACCESS Private
-router.post("/camping", createCamping)
+router.post("/camping", authCheck, createCamping)
 
 // @ENDPOINT: http://localhost:5000/api/camping/5
 // @METHOD: PUT
