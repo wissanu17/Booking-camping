@@ -30,9 +30,10 @@ const Camping = () => {
   const onSubmit = async (data) => {
 
     // test
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    // เปลี่ยนตอนไหนลืม
+    // await new Promise((resolve) => setTimeout(resolve, 1000))
     const token = await getToken();
-    console.log(token)
+    console.log(data)
 
     createCamping(token, data)
       .then((res) => {
@@ -79,7 +80,7 @@ const Camping = () => {
                 setValue={setValue}
               />
             </div>
-            <FormUploadImage />
+            <FormUploadImage setValue = {setValue}/>
           </div>
 
           <Mainmap
