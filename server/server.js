@@ -13,8 +13,8 @@ const { clerkMiddleware } = require('@clerk/express');
 
 // Middleware
 app.use(cors());
-app.use(express.json());
-// กูจะบ้าแก้ตั้งนานลืมกดเรียกใช้แค่นี้ สาสสสสสส
+app.use(express.json({limit: "10mb"}))
+// กูจะบ้าแก้ตั้งนานลืมกดเรียกใช้แค่นี้
 app.use(morgan('dev'))
 app.use(clerkMiddleware())
 // Method GET, POST, PUT, DELETE, PATCH

@@ -5,7 +5,7 @@ exports.listCamping = async(req, res) => {
   try {
     // body
     const campings = await prisma.landmark.findMany()
-    res.json(result: campings)
+    res.json({result: campings})
   } catch (error) {
     console.log(error.massage)
     res.status(500).json({ message: "Server Error" })
@@ -22,7 +22,7 @@ exports.readCamping = async(req, res) => {
         id: Number(id)
       }
     })
-    res.json(result: campings)
+    res.json({result: campings})
   } catch (error) {
     console.log(error.massage)
     res.status(500).json({ message: "Server Error" })

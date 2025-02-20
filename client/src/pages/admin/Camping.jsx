@@ -13,6 +13,7 @@ import Mainmap from "@/components/map/Mainmap";
 import { createCamping } from "@/api/camping";
 
 import { useAuth } from "@clerk/clerk-react";
+import FormUploadImage from "@/components/form/FormUploadImage";
 
 const Camping = () => {
 
@@ -34,12 +35,12 @@ const Camping = () => {
     console.log(token)
 
     createCamping(token, data)
-    .then((res)=>{
-      console.log(res.data)
-    })
-    .catch((err)=>{
-      console.log(err)
-    })
+      .then((res) => {
+        console.log(res.data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
     // console.log(data)
   }
   return (
@@ -71,22 +72,23 @@ const Camping = () => {
               placeholder="Input Your Description"
               errors={errors}
             />
-
-            <CategoryInput
-              name="category"
-              register={register}
-              setValue={setValue}
-            />
-
+            <div>
+              <CategoryInput
+                name="category"
+                register={register}
+                setValue={setValue}
+              />
+            </div>
+            <FormUploadImage />
           </div>
 
-          <Mainmap 
+          <Mainmap
             register={register} setValue={setValue}
           />
 
           <Buttons
             text="create camping"
-            isPending={isSubmitting} 
+            isPending={isSubmitting}
           />
         </form>
       </div>

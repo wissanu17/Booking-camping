@@ -1,5 +1,6 @@
 //rafce
 
+import MapHome from "@/components/map/MapHome";
 import { 
   SignedIn, 
   SignedOut, 
@@ -12,7 +13,7 @@ import {
 const Home = () => {
   return (
     <div>
-      Home
+      <MapHome />
   </div>
   )
 }
