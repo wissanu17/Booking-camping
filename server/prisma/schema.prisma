@@ -21,7 +21,6 @@ model Profile {
   email     String
   createAt  DateTime   @default(now())
   updateAt  DateTime   @updatedAt
-  // Alt Shift F
   landmarks Landmark[]
 }
 
@@ -37,6 +36,6 @@ model Landmark {
   category    String
   createAt    DateTime @default(now())
   updateAt    DateTime @updatedAt
-  Profile     Profile? @relation(fields: [profileId], references: [clerkId])
-  profileId   String?
+  profile     Profile  @relation(fields: [profileId], references: [clerkId])
+  profileId   String
 }

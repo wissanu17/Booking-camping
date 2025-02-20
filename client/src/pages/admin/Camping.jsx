@@ -40,6 +40,7 @@ const Camping = () => {
         console.log(res.data)
       })
       .catch((err) => {
+        console.log({message: "kuayyyy"})
         console.log(err)
       })
     // console.log(data)

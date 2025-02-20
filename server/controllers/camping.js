@@ -41,13 +41,16 @@ exports.createCamping = async (req, res) => {
 
     const { title, description, price, category, lat, lng, image } = req.body
     const { id } = req.user
+    console.log(req.user)
     console.log(image)
     const camping = await prisma.landmark.create(
       {
         data:{
           title: title,
           description: description,
-          price: price,
+          // price: price,
+          price: parseInt(price, 10),
+
           category: category,
           lat: lat,
           public_id: image.public_id,
@@ -62,7 +65,7 @@ exports.createCamping = async (req, res) => {
       result: camping})
     // res.send("Hello Create Potae 66666666666666")
   } catch (error) {
-    console.log(error.massage)
+    console.log(error.message)
     res.status(500).json({ message: "Server Error" })
   }
 }
