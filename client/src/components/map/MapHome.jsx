@@ -2,8 +2,6 @@
 import { MapContainer } from "react-leaflet";
 import Layers from "./Layers";
 const MapHome = () => {
-
-
   return (
     <div>
       <MapContainer

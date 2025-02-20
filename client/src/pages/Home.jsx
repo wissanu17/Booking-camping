@@ -1,20 +1,12 @@
-//rafce
+// rafce
 
-import MapHome from "@/components/map/MapHome";
-import { 
-  SignedIn, 
-  SignedOut, 
-  SignInButton, 
-  SignOutButton, 
-  SignUpButton, 
-  UserButton 
-} from "@clerk/clerk-react";
+import CampingContainer from "@/components/home/CampingContainer";
 
 const Home = () => {
   return (
     <div>
-      <MapHome />
-  </div>
-  )
-}
-export default Home
+      <CampingContainer />
+    </div>
+  );
+};
+export default Home;

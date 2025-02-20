@@ -20,7 +20,7 @@ const FormUploadImage = ({ setValue }) => {
       // code
       const resizedImage = await resizeFile(file);
       const res = await uploadImage(token, resizedImage);
-      // console.log("hello", res.data.result);
+      console.log("hello", res.data.result);
       setValue("image", res.data.result);
       setIsLoading(false);
     } catch (error) {

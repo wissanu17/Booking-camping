@@ -14,12 +14,13 @@ import { createCamping } from "@/api/camping";
 
 import { useAuth } from "@clerk/clerk-react";
 import FormUploadImage from "@/components/form/FormUploadImage";
+import { createAlert } from "@/utils/createAlert";
 
 const Camping = () => {
 
   const { getToken, userId } = useAuth();
 
-  const { register, handleSubmit, formState, setValue } = useForm({
+  const { register, handleSubmit, formState, setValue, reset } = useForm({
     resolver: zodResolver(campingSchema),
   });
 
@@ -38,10 +39,12 @@ const Camping = () => {
     createCamping(token, data)
       .then((res) => {
         console.log(res.data)
+        reset()
+        createAlert("success", "Create landmark success.")
       })
       .catch((err) => {
-        console.log({message: "kuayyyy"})
         console.log(err)
+        createAlert("error", err.message)
       })
     // console.log(data)
   }
