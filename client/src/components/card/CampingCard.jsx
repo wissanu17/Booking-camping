@@ -23,9 +23,9 @@ const CampingCard = ({ camping }) => {
       <Link to={`/user/camping/${camping.id}`}>
         <article
           className="hover:scale-105 hover:duration-300 
-    shadow-md p-2 rounded-md"
+    shadow-md p-2 rounded-md bg-white"
         >
-          <div className="h-[300px] rounded-md mb-2">
+          <div className="h-[300px] rounded-md mb-2 ">
             <img
               src={camping.secure_url}
               className="w-full h-full object-cover rounded-md"

@@ -32,7 +32,7 @@ const Camping = () => {
 
     // test
     // เปลี่ยนตอนไหนลืม
-    // await new Promise((resolve) => setTimeout(resolve, 1000))
+    await new Promise((resolve) => setTimeout(resolve, 1000))
     const token = await getToken();
     console.log(data)
 

@@ -4,10 +4,14 @@ import { Trees } from "lucide-react";
 
 const Logo = () => {
   return (
-    <Button asChild variant="ghost" className="flex flex-col items-center gap-1 text-lg font-bold">
+    <Button
+      asChild
+      variant="ghost"
+      className="flex flex-col items-center gap-0 bg-white border border-gray-300 shadow-sm rounded-lg p-3"
+    >
       <Link to="/">
-        <Trees size={100} className="text-green-700" />
-        <span className="text-sm text-gray-700">Poate Camping</span>
+        <Trees size={40} className="text-green-700" />
+        <span className="text-xs text-gray-700">Poate Camping</span>
       </Link>
     </Button>
   );

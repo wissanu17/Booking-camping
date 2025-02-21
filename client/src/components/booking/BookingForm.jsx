@@ -2,6 +2,7 @@ import useBookingStore from "@/store/booking-store";
 import { Card, CardTitle } from "../ui/card";
 import { calTotal } from "@/utils/booking";
 import { formatNumber } from "@/utils/formatNumber";
+import { Button } from "../ui/button";
 
 
 // rafce
@@ -27,7 +28,7 @@ const BookingForm = () => {
         </p>
       </Card>
       {/* Confirm Booking */}
-      <p>Confirm Booking</p>
+      <Button>Confirm Booking</Button>
     </div>
   );
 };

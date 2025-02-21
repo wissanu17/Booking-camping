@@ -27,7 +27,7 @@ const BookingCalendar = () => {
         selected={range}
         onSelect={setRange}
         // disabled={range}
-        className="rounded-md border"
+        className="rounded-md border bg-pink-100 shadow"
       />
     </div>
   );

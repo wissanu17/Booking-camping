@@ -4,10 +4,15 @@ import AppRoutes from "./routes/AppRoutes"
 
 function App() {
   return (
-    <>
-    <AppRoutes />
-    <Toaster />
-    </>
-  )
+    <div
+      className="bg-blue-50 min-h-screen"
+      // className="min-h-screen bg-cover bg-center"
+      // style={{ backgroundImage: "url('/images/moo.jpg')" }}
+    >
+      <AppRoutes />
+      <Toaster />
+    </div>
+  );
 }
-export default App
+
+export default App;

@@ -47,7 +47,7 @@ const Mainmap = ({ register, location, setValue }) => {
         </>
       )}
 
-      <h1 className="font-semibold mt-4">Where are you?</h1>
+      <h1 className="font-semibold mt-4 text-red-700">Coordinate...</h1>
 
       {position && (
         <p className="text-sm text-gray-600">
