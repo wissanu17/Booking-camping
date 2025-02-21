@@ -22,7 +22,9 @@ function CampingDetail() {
   const fetchCampingDetail = async (id) => {
     try {
       const res = await readCamping(id);
+      console.log(res.data.result)
       setCamping(res.data.result);
+
     } catch (error) {
       console.log(error);
     }
@@ -51,7 +53,8 @@ function CampingDetail() {
       <section className="lg:grid lg:grid-cols-12 gap-x-12 mt-12">
         <div className="lg:col-span-8">
           <Description text={camping.description} />
-          {camping.lat && <Mainmap location={[camping.lat, camping.lng]} />}
+          
+          {camping?.lat && <Mainmap location={[camping.lat, camping.lng]} />}
         </div>
         {/* Calender */}
         <div className="lg:col-span-4 flex flex-col items-center">

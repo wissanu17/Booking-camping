@@ -11,6 +11,7 @@ import Profile from "@/pages/user/Profile";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router";
 import ProtectRoute from "./ProtectRoute";
 import CampingDetail from "@/pages/user/CampingDetail";
+//import CampingDetail from "@/pages/user/CampingDetail";
 
 const AppRoutes = () => {
   return (

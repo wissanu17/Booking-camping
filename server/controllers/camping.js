@@ -1,36 +1,34 @@
 const prisma = require("../config/prisma")
 
 // GET
-exports.listCamping = async(req, res) => {
+exports.listCamping = async(req, res, next) => {
   try {
     // body
     const campings = await prisma.landmark.findMany()
     res.json({result: campings})
   } catch (error) {
-    console.log(error.massage)
-    res.status(500).json({ message: "Server Error" })
+    next(error);
   }
 }
 
 // GET
-exports.readCamping = async(req, res) => {
+exports.readCamping = async(req, res, next) => {
   try {
     // code
     const { id } = req.params;
-    const campings = await prisma.landmark.finFirst({
+    const camping = await prisma.landmark.findFirst({
       where: {
-        id: Number(id)
+        id: Number(id),
       }
     })
-    res.json({result: campings})
+    res.json({result: camping})
   } catch (error) {
-    console.log(error.massage)
-    res.status(500).json({ message: "Server Error" })
+    next(error);
   }
 }
 
 // POST
-exports.createCamping = async (req, res) => {
+exports.createCamping = async (req, res, next) => {
   try {
     const { title, description, price, category, lat, lng, image } = req.body;
     const { id } = req.user;
@@ -56,30 +54,27 @@ exports.createCamping = async (req, res) => {
       result: camping})
     // res.send("Hello Create Potae 66666666666666")
   } catch (error) {
-    console.log(error.message)
-    res.status(500).json({ message: "Server Error" })
+    next(error);
   }
 }
 
 // PUT
-exports.updateCamping = (req, res) => {
+exports.updateCamping = (req, res, next) => {
   try {
     // code
     // console.log(req.params.id)
     res.send("Hello PUT Update Potae")
   } catch (error) {
-    console.log(error.massage)
-    res.status(500).json({ message: "Server Error" })
+    next(error);
   }
 }
 
 // DELETE
-exports.deleteCamping = (req, res) => {
+exports.deleteCamping = (req, res, next) => {
   try {
     // code
     res.send("Hello DELETE Potae")
   } catch (error) {
-    console.log(error.massage)
-    res.status(500).json({ message: "Server Error" })
+    next(error);
   }
 }

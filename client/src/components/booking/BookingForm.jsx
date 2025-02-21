@@ -3,6 +3,7 @@ import { Card, CardTitle } from "../ui/card";
 import { calTotal } from "@/utils/booking";
 import { formatNumber } from "@/utils/formatNumber";
 
+
 // rafce
 const BookingForm = () => {
   const price = useBookingStore((state) => state.price);
