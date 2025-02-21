@@ -13,7 +13,8 @@ const FormInputs = ({ register, name, type, placeholder, errors }) => {
         {...register(name)}
         type={type}
         placeholder={placeholder}
-        className={`${errors[name] && "border-red-500"}`}
+        // className={`${errors[name] && "border-red-500"}`
+        className={`${errors[name] ? "border-red-500" : ""} bg-white`}
       />
       {errors[name] && (
         <p className="text-red-500 text-sm">{errors[name].message}</p>

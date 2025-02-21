@@ -15,8 +15,8 @@ const CategoryInput = ({ name, register, setValue }) => {
       <input hidden {...register(name)} />
 
       <Label className="capitalize">{name}</Label>
-      <Select onValueChange={(value) => setValue(name, value)} required>
-        <SelectTrigger>
+      <Select onValueChange={(value) => setValue(name, value)} required className="bg-white">
+        <SelectTrigger className="bg-white">
           <SelectValue placeholder="Please Select Category" />
         </SelectTrigger>
 

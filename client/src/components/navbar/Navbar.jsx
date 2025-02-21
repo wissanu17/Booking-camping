@@ -3,6 +3,7 @@
 import DropdownListManu from "./DropdownListManu";
 import Logo from "./Logo";
 import Searchbar from "./Searchbar";
+import ThemeToggle from "./theme";
 
 const Navbar = () => {
   return (
@@ -13,6 +14,7 @@ const Navbar = () => {
       >
         <Logo />
         <Searchbar />
+        {/* <ThemeToggle />  */}
         <DropdownListManu />
       </div>
     </nav>

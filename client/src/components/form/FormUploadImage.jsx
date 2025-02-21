@@ -31,7 +31,7 @@ const FormUploadImage = ({ setValue }) => {
   return (
     <div>
       <Label>Upload Image</Label>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 bg-white">
         <Input type="file" onChange={hdlOnChange} />
         {isLoading && <RotateCw className="animate-spin" />}
       </div>
