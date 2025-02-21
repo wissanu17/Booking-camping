@@ -23,6 +23,7 @@ app.use(clerkMiddleware())
 // app.use('/api', profileRoute)
 
 console.log(readdirSync('./routes'))
+// loop
 readdirSync('./routes').map((r) => app.use('/api', require(`./routes/${r}`)))
 
 app.use(handleErrors)

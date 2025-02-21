@@ -6,9 +6,10 @@ const Buttons = ({ text, isPending }) => {
       {isPending ? (
         <>
           <RotateCw className="animate-spin" />
-          <span>Please wait...</span>
+          <span>Please wait jaa...</span>
         </>
       ) : (
+        // text on Button
         <p>{text}</p>
       )}
     </Button>

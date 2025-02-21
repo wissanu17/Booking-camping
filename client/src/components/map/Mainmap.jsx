@@ -47,10 +47,10 @@ const Mainmap = ({ register, location, setValue }) => {
         </>
       )}
 
-      <h1 className="font-semibold mt-4 text-red-700">Coordinate...</h1>
+      <h1 className="font-semibold mt-4 text-red-700">Where is this place...?</h1>
 
       {position && (
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-gray-600 mb-1">
           Coordinates : {position.lat.toFixed(6)} , {position.lng.toFixed(6)}
         </p>
       )}
