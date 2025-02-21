@@ -5,7 +5,7 @@ const Searchbar = () => {
   return (
     <Input 
         type='text'
-        placeholder="Search ..."
+        placeholder="Search ... (can't use right now.)"
         className="max-w-xs"
     />
   )
