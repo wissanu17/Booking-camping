@@ -52,8 +52,9 @@ const BookingConfirm = () => {
     try {
       const res = await createBooking(token, value);
       const bookingId = res.data.result;
-      console.log(bookingId);
-      // navigate(`/user/checkout/${bookingId}`);
+      // console.log(bookingId);
+      navigate(`/user/checkout/${bookingId}`);
+      
     } catch (error) {
       console.log(error);
     }
