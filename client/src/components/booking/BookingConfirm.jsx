@@ -30,7 +30,7 @@ const BookingConfirm = () => {
           mode="modal"
           forceRedirectUrl={`/user/camping/${campingId}`}
         >
-          <Button>SignIn ก่อนน้าา</Button>
+          <Button>Sign-in ก่อนนะครับ</Button>
         </SignInButton>
       </div>
     );

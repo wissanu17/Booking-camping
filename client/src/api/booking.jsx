@@ -8,6 +8,14 @@ export const createBooking = async (token, data) => {
   });
 };
 
+export const listBooking = async (token) => {
+  return await axios.get("http://localhost:5000/api/bookings", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+
 export const checkOut = async (token, id) => {
   return await axios.post(
     "http://localhost:5000/api/checkout",

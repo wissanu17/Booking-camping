@@ -3,6 +3,37 @@ const { calTotal } = require("../utils/booking");
 const renderError = require("../utils/renderError");
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
+
+exports.listBooking = async (req, res, next) => {
+  try {
+
+    const { id } = req.user;
+    console.log(id)
+    const bookings = await prisma.booking.findMany({
+      where:{
+        profileId:id,
+        paymentStatus:true
+      },
+      include:{
+        landmark:{
+          select:{
+            id:true,
+            title:true
+          }
+        }
+      },
+      orderBy: {
+        checkIn: 'asc'
+      }
+    })
+
+    console.log(bookings)
+    res.json({ result: bookings, message:"Potae will list your order"})
+  } catch (error) {
+    NodeIterator(error)
+  }
+}
+
 // POST
 exports.createBooking = async (req, res, next) => {
   try {
@@ -156,3 +187,4 @@ exports.checkOutStatus = async (req, res, next) => {
     next(error)
   }
 }
+
