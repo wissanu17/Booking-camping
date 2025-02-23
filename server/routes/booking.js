@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 // controller
-const { createBooking } = require("../controllers/booking");
+const { createBooking, checkout, checkOutStatus } = require("../controllers/booking");
 const { authCheck } = require("../middlewares/auth");
 
 
@@ -9,6 +9,13 @@ const { authCheck } = require("../middlewares/auth");
 
 // @ENDPOINT: http://localhost:5000/api/booking
 router.post("/booking",authCheck, createBooking);
+
+
+// @payment
+// @ENDPOINT: http://localhost:5000/api/checkout
+router.post("/checkout",authCheck, checkout);
+
+router.get("/checkout-status/:session_id",authCheck, checkOutStatus);
 
 
 

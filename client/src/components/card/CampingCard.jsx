@@ -36,7 +36,8 @@ const CampingCard = ({ camping }) => {
             <h3 className="text-xl font-semibold">{camping.title}</h3>
           </div>
 
-          <p className="text-gray-700">{camping.description}</p>
+          <p className="text-sm text-gray-700">
+            {camping.description.substring(0,50)} อ่านเพิ่มเติม...</p>
 
           <div className="flex justify-between">
             <p className="font-semibold">฿THB {camping.price}</p>

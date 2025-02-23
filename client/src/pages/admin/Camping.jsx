@@ -84,7 +84,7 @@ const Camping = () => {
                 setValue={setValue}
               />
             </div>
-            <FormUploadImage setValue = {setValue}/>
+            <FormUploadImage setValue={setValue} />
           </div>
 
           <Mainmap
